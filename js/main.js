@@ -563,22 +563,24 @@
 
   const MobileMenu = (function () {
     let toggleBtn = null;
-    let menu      = null;
+    let nav       = null;
     let isOpen    = false;
 
     function open() {
       isOpen = true;
-      menu.classList.add('is-open');
-      toggleBtn.classList.add('is-active');
+      nav.classList.add('nav--open');
+      toggleBtn.classList.add('hamburger--active');
       toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.setAttribute('aria-label', 'Fermer le menu');
       document.body.style.overflow = 'hidden';
     }
 
     function close() {
       isOpen = false;
-      menu.classList.remove('is-open');
-      toggleBtn.classList.remove('is-active');
+      nav.classList.remove('nav--open');
+      toggleBtn.classList.remove('hamburger--active');
       toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.setAttribute('aria-label', 'Ouvrir le menu');
       document.body.style.overflow = '';
     }
 
@@ -589,26 +591,20 @@
     function onDocumentClick(e) {
       if (
         isOpen &&
-        !menu.contains(e.target) &&
+        !nav.contains(e.target) &&
         !toggleBtn.contains(e.target)
       ) close();
     }
 
     function init() {
-      toggleBtn = $('.nav__toggle');
-      menu      = $('.nav__menu');
-      if (!toggleBtn || !menu) return;
-
-      // Attributs ARIA initiaux
-      if (!menu.id) menu.id = 'nav-menu';
-      toggleBtn.setAttribute('aria-controls', menu.id);
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      toggleBtn.setAttribute('aria-label', 'Ouvrir le menu');
+      toggleBtn = $('.hamburger');
+      nav       = $('.nav, #nav-menu');
+      if (!toggleBtn || !nav) return;
 
       toggleBtn.addEventListener('click', () => isOpen ? close() : open());
 
-      // Fermer sur clic d'un lien
-      $$('a', menu).forEach(link =>
+      // Close on link click
+      $$('a', nav).forEach(link =>
         link.addEventListener('click', () => { if (isOpen) close(); })
       );
 
