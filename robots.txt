@@ -1,0 +1,10 @@
+# Robots.txt for emmanuel-mikaelian.fr
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://emmanuel-mikaelian.fr/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

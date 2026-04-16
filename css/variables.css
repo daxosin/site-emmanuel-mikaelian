@@ -1,0 +1,301 @@
+/* ==========================================================================
+   CSS Custom Properties — Dual Theme System
+   Themes: Editorial Pharma (default) | Terminal Hacker
+   ========================================================================== */
+
+/* ==========================================================================
+   SHARED TOKENS — layout, spacing, type scale, radii, z-index, motion
+   These values do not change between themes.
+   ========================================================================== */
+
+:root {
+
+  /* --- Spacing scale ---------------------------------------------------- */
+  --space-1:   0.25rem;   /*  4px */
+  --space-2:   0.5rem;    /*  8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.25rem;   /* 20px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+  --space-20:  5rem;      /* 80px */
+  --space-24:  6rem;      /* 96px */
+  --space-32:  8rem;      /* 128px */
+
+  /* --- Type scale ------------------------------------------------------- */
+  --text-xs:   0.75rem;                            /* 12px */
+  --text-sm:   0.875rem;                           /* 14px */
+  --text-base: 1rem;                               /* 16px */
+  --text-lg:   1.125rem;                           /* 18px */
+  --text-xl:   1.25rem;                            /* 20px */
+  --text-2xl:  1.5rem;                             /* 24px */
+  --text-3xl:  1.875rem;                           /* 30px */
+  --text-4xl:  2.25rem;                            /* 36px */
+  --text-5xl:  clamp(2.5rem,  5vw, 3rem);          /* 40–48px */
+  --text-6xl:  clamp(3rem,    6vw, 4rem);          /* 48–64px */
+  --text-hero: clamp(3.5rem,  8vw, 6rem);          /* 56–96px */
+
+  /* --- Line heights ----------------------------------------------------- */
+  --leading-none:    1;
+  --leading-tight:   1.2;
+  --leading-snug:    1.35;
+  --leading-normal:  1.6;
+  --leading-relaxed: 1.75;
+
+  /* --- Letter spacing --------------------------------------------------- */
+  --tracking-tighter: -0.04em;
+  --tracking-tight:   -0.02em;
+  --tracking-normal:   0;
+  --tracking-wide:     0.04em;
+  --tracking-wider:    0.08em;
+  --tracking-widest:   0.15em;
+  --tracking-caps:     0.1em;
+
+  /* --- Font weights ----------------------------------------------------- */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-extrabold:800;
+
+  /* --- Border radius ---------------------------------------------------- */
+  --radius-sm:   0.25rem;   /*  4px */
+  --radius-md:   0.5rem;    /*  8px */
+  --radius-lg:   0.75rem;   /* 12px */
+  --radius-xl:   1rem;      /* 16px */
+  --radius-2xl:  1.5rem;    /* 24px */
+  --radius-full: 9999px;
+
+  /* --- Z-index scale ---------------------------------------------------- */
+  --z-base:     0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-header:   300;
+  --z-overlay:  400;
+  --z-drawer:   450;
+  --z-modal:    500;
+
+  /* --- Layout / containers ---------------------------------------------- */
+  --container-max:    1200px;
+  --container-wide:   1400px;
+  --container-narrow:  720px;
+  --container-prose:   640px;
+  --header-height:      64px;
+  --section-gap:       clamp(3rem, 8vw, 8rem);
+  --gutter:            clamp(1rem, 4vw, 2rem);
+
+  /* --- Motion / transitions --------------------------------------------- */
+  --duration-fast:   150ms;
+  --duration-base:   250ms;
+  --duration-slow:   400ms;
+  --duration-slower: 600ms;
+
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:  cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --transition-fast:   var(--duration-fast)  var(--ease-out);
+  --transition-base:   var(--duration-base)  var(--ease-out);
+  --transition-slow:   var(--duration-slow)  var(--ease-out);
+  --transition-colors: color             var(--duration-base) var(--ease-out),
+                       background-color  var(--duration-base) var(--ease-out),
+                       border-color      var(--duration-base) var(--ease-out),
+                       box-shadow        var(--duration-base) var(--ease-out);
+
+}
+
+
+/* ==========================================================================
+   THEME 1 — EDITORIAL PHARMA  (default)
+   Warm dark brown editorial palette. Applied by default and via
+   [data-theme="editorial"]. Heading font: Playfair Display. Accent: gold.
+   ========================================================================== */
+
+:root,
+[data-theme="editorial"] {
+
+  /* --- Core surfaces ---------------------------------------------------- */
+  --color-bg:       #1c1917;
+  --color-surface:  #231f1b;
+  --color-elevated: #2a2520;
+  --color-overlay:  rgba(28, 25, 23, 0.85);
+
+  /* --- Typography ------------------------------------------------------- */
+  --color-text-primary:   #f5f0e8;
+  --color-text-secondary: rgba(245, 240, 232, 0.7);
+  --color-text-muted:     rgba(245, 240, 232, 0.4);
+  --color-text-disabled:  rgba(245, 240, 232, 0.2);
+  --color-text-inverse:   #1c1917;
+
+  /* --- Accent — gold ---------------------------------------------------- */
+  --color-accent:        #c5975b;
+  --color-accent-light:  #d4ab78;
+  --color-accent-dim:    rgba(197, 151, 91, 0.12);
+  --color-accent-subtle: rgba(197, 151, 91, 0.06);
+  --color-accent-hover:  rgba(197, 151, 91, 0.20);
+
+  /* --- Secondary accent — pétrol --------------------------------------- */
+  --color-petrole:       #2d6a8a;
+  --color-petrole-light: #3d7fa3;
+  --color-petrole-dim:   rgba(45, 106, 138, 0.15);
+
+  /* --- Semantic states -------------------------------------------------- */
+  --color-success:     #34d399;
+  --color-success-dim: rgba(52, 211, 153, 0.12);
+  --color-warning:     #f59e0b;
+  --color-warning-dim: rgba(245, 158, 11, 0.12);
+  --color-error:       #f87171;
+  --color-error-dim:   rgba(248, 113, 113, 0.12);
+  --color-info:        #60a5fa;
+  --color-info-dim:    rgba(96, 165, 250, 0.12);
+
+  /* --- Borders ---------------------------------------------------------- */
+  --color-border-subtle: rgba(197, 151, 91, 0.10);
+  --color-border:        rgba(197, 151, 91, 0.20);
+  --color-border-strong: rgba(197, 151, 91, 0.35);
+  --color-border-focus:  rgba(197, 151, 91, 0.65);
+
+  /* --- Shadows (warm brown tones) --------------------------------------- */
+  --shadow-sm:     0 1px 3px  rgba(12, 9, 6, 0.40),
+                   0 1px 2px  rgba(12, 9, 6, 0.30);
+  --shadow-md:     0 4px 12px rgba(12, 9, 6, 0.45),
+                   0 2px 6px  rgba(12, 9, 6, 0.35);
+  --shadow-lg:     0 10px 30px rgba(12, 9, 6, 0.50),
+                   0 4px 12px  rgba(12, 9, 6, 0.40);
+  --shadow-xl:     0 20px 50px rgba(12, 9, 6, 0.60),
+                   0 8px 20px  rgba(12, 9, 6, 0.45);
+  --shadow-accent: 0 4px 20px rgba(197, 151, 91, 0.18),
+                   0 1px 6px  rgba(197, 151, 91, 0.10);
+  --shadow-inset:  inset 0 1px 3px rgba(12, 9, 6, 0.50);
+
+  /* --- Typography stacks ------------------------------------------------ */
+  --font-sans:  'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:  'Source Sans 3', -apple-system, BlinkMacSystemFont,
+                'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono:  'JetBrains Mono', 'Fira Code', 'Cascadia Code',
+                'Consolas', monospace;
+
+  /* --- Glassmorphism ---------------------------------------------------- */
+  --glass-bg:     rgba(28, 25, 23, 0.80);
+  --glass-border: rgba(197, 151, 91, 0.12);
+  --glass-blur:   16px;
+
+  /* --- Theme-specific effects ------------------------------------------ */
+  --glow-accent:   none;
+  --glow-surface:  none;
+  --terminal-glow: none;
+
+  /* --- Scrollbar -------------------------------------------------------- */
+  --scrollbar-track:       #1c1917;
+  --scrollbar-thumb:       rgba(197, 151, 91, 0.25);
+  --scrollbar-thumb-hover: rgba(197, 151, 91, 0.45);
+
+  /* --- Selection -------------------------------------------------------- */
+  --selection-bg:   rgba(197, 151, 91, 0.25);
+  --selection-text: #f5f0e8;
+}
+
+
+/* ==========================================================================
+   THEME 2 — TERMINAL HACKER
+   Deep dark blue-black palette, monospace-first. Applied via
+   [data-theme="terminal"]. Accent: terminal green (#22c55e).
+   ========================================================================== */
+
+[data-theme="terminal"] {
+
+  /* --- Core surfaces ---------------------------------------------------- */
+  --color-bg:       #0a0d11;
+  --color-surface:  #0f1318;
+  --color-elevated: #151a22;
+  --color-overlay:  rgba(10, 13, 17, 0.90);
+
+  /* --- Typography ------------------------------------------------------- */
+  --color-text-primary:   #c8d6e5;
+  --color-text-secondary: #5a6a7e;
+  --color-text-muted:     #3a4558;
+  --color-text-disabled:  #252e3a;
+  --color-text-inverse:   #0a0d11;
+
+  /* --- Accent — terminal green ----------------------------------------- */
+  --color-accent:        #22c55e;
+  --color-accent-light:  #4ade80;
+  --color-accent-dim:    rgba(34, 197, 94, 0.08);
+  --color-accent-subtle: rgba(34, 197, 94, 0.04);
+  --color-accent-hover:  rgba(34, 197, 94, 0.15);
+
+  /* --- Secondary accent — cyan/teal ------------------------------------ */
+  --color-petrole:       #06b6d4;
+  --color-petrole-light: #22d3ee;
+  --color-petrole-dim:   rgba(6, 182, 212, 0.10);
+
+  /* --- Semantic states -------------------------------------------------- */
+  --color-success:     #22c55e;
+  --color-success-dim: rgba(34, 197, 94, 0.10);
+  --color-warning:     #eab308;
+  --color-warning-dim: rgba(234, 179, 8, 0.10);
+  --color-error:       #ef4444;
+  --color-error-dim:   rgba(239, 68, 68, 0.10);
+  --color-info:        #3b82f6;
+  --color-info-dim:    rgba(59, 130, 246, 0.10);
+
+  /* --- Borders ---------------------------------------------------------- */
+  --color-border-subtle: rgba(34, 197, 94, 0.08);
+  --color-border:        rgba(34, 197, 94, 0.15);
+  --color-border-strong: rgba(34, 197, 94, 0.28);
+  --color-border-focus:  rgba(34, 197, 94, 0.60);
+
+  /* --- Shadows (dark with green glow hints) ----------------------------- */
+  --shadow-sm:     0 1px 3px  rgba(0, 0, 0, 0.60),
+                   0 1px 2px  rgba(0, 0, 0, 0.50);
+  --shadow-md:     0 4px 12px rgba(0, 0, 0, 0.65),
+                   0 2px 6px  rgba(0, 0, 0, 0.50),
+                   0 0 0 1px  rgba(34, 197, 94, 0.04);
+  --shadow-lg:     0 10px 30px rgba(0, 0, 0, 0.70),
+                   0 4px 12px  rgba(0, 0, 0, 0.55),
+                   0 0 20px    rgba(34, 197, 94, 0.05);
+  --shadow-xl:     0 20px 50px rgba(0, 0, 0, 0.80),
+                   0 8px 20px  rgba(0, 0, 0, 0.60),
+                   0 0 40px    rgba(34, 197, 94, 0.07);
+  --shadow-accent: 0 4px 20px rgba(34, 197, 94, 0.20),
+                   0 1px 6px  rgba(34, 197, 94, 0.12);
+  --shadow-inset:  inset 0 1px 3px rgba(0, 0, 0, 0.70);
+
+  /* --- Typography stacks ------------------------------------------------ */
+  --font-sans:  'Geist Mono', 'JetBrains Mono', 'Fira Code',
+                'Cascadia Code', 'Consolas', monospace;
+  --font-body:  'Source Sans 3', -apple-system, BlinkMacSystemFont,
+                'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono:  'JetBrains Mono', 'Fira Code', 'Cascadia Code',
+                'Consolas', monospace;
+
+  /* --- Glassmorphism ---------------------------------------------------- */
+  --glass-bg:     rgba(10, 13, 17, 0.85);
+  --glass-border: rgba(34, 197, 94, 0.10);
+  --glass-blur:   12px;
+
+  /* --- Terminal-specific effects --------------------------------------- */
+  --terminal-glow:             0 0 20px rgba(34, 197, 94, 0.15);
+  --terminal-glow-lg:          0 0 40px rgba(34, 197, 94, 0.20),
+                               0 0 80px rgba(34, 197, 94, 0.08);
+  --glow-accent:               0 0 12px rgba(34, 197, 94, 0.35);
+  --glow-surface:              inset 0 0 30px rgba(34, 197, 94, 0.03);
+
+  /* --- Terminal atmosphere --------------------------------------------- */
+  --terminal-scanline-opacity: 0.03;
+  --terminal-cursor-color:     #22c55e;
+
+  /* --- Scrollbar -------------------------------------------------------- */
+  --scrollbar-track:       #0a0d11;
+  --scrollbar-thumb:       rgba(34, 197, 94, 0.18);
+  --scrollbar-thumb-hover: rgba(34, 197, 94, 0.35);
+
+  /* --- Selection -------------------------------------------------------- */
+  --selection-bg:   rgba(34, 197, 94, 0.20);
+  --selection-text: #c8d6e5;
+}

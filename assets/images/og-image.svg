@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0f172a"/>
+
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#334155" opacity="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Accent line -->
+  <rect x="80" y="200" width="6" height="230" rx="3" fill="#0ea5e9"/>
+
+  <!-- Logo ME -->
+  <g transform="translate(1000, 80)">
+    <rect width="120" height="120" rx="20" fill="#1e293b"/>
+    <g fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(20, 28)">
+      <!-- M -->
+      <path d="M 0 64 L 0 0 L 20 32 L 40 0 L 40 32"/>
+      <!-- Fused bar -->
+      <path d="M 40 32 L 80 32"/>
+      <!-- M continues -->
+      <path d="M 40 32 L 40 64"/>
+      <!-- E vertical -->
+      <path d="M 80 0 L 80 64"/>
+      <!-- E top -->
+      <path d="M 80 0 L 55 0"/>
+      <!-- E bottom -->
+      <path d="M 80 64 L 55 64"/>
+    </g>
+  </g>
+
+  <!-- Main text -->
+  <text x="110" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="700" fill="white">
+    Emmanuel Mikaelian
+  </text>
+
+  <!-- Subtitle -->
+  <text x="110" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="500" fill="#ffffff">
+    Pharmacien DPO | Architecte de la Santé de Demain
+  </text>
+
+  <!-- Tagline -->
+  <text x="110" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="#38bdf8">
+    Conformité &amp; Qualité  |  PDA &amp; Automatisation  |  Tech &amp; IA Santé
+  </text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="600" width="1200" height="30" fill="#0ea5e9"/>
+</svg>

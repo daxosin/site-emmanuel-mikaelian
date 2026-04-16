@@ -1,0 +1,558 @@
+/* ===================================================================
+   COMPONENTS — Dual-theme UI system (editorial + terminal)
+   All colors from CSS variables defined in variables.css
+   =================================================================== */
+
+
+/* ===================================================================
+   BUTTONS (.btn)
+   =================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.75rem 1.5rem;
+  min-height: 44px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-colors);
+  white-space: nowrap;
+}
+
+/* Primary — accent background, dark text on gold */
+.btn--primary {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-accent-light);
+  border-color: var(--color-accent-light);
+}
+
+/* Secondary — transparent with border */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+}
+
+/* Ghost — no border, minimal */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-text-muted);
+  border-color: transparent;
+}
+
+.btn--ghost:hover {
+  background-color: var(--color-elevated);
+  color: var(--color-text-primary);
+}
+
+/* Size variants */
+.btn--lg {
+  padding: 1rem 2rem;
+  font-size: var(--text-base);
+  border-radius: var(--radius-xl);
+}
+
+.btn--sm {
+  padding: 0.375rem 0.875rem;
+  font-size: var(--text-xs);
+}
+
+/* Full width */
+.btn--full {
+  width: 100%;
+}
+
+/* Terminal mode — primary button gets subtle green glow on hover */
+[data-theme="terminal"] .btn--primary:hover {
+  box-shadow: 0 0 12px var(--color-accent-dim), 0 0 24px var(--color-accent-dim);
+}
+
+
+/* ===================================================================
+   CARDS (.card)
+   =================================================================== */
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+/* Card icon — 48×48 container */
+.card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-elevated);
+  border-radius: var(--radius-lg);
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+  flex-shrink: 0;
+}
+
+/* Card title */
+.card__title {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+/* Card body text */
+.card__text {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+/* Card link — with animated arrow on hover */
+.card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: var(--transition-colors);
+}
+
+.card__link:hover {
+  color: var(--color-accent);
+}
+
+/* Arrow icon inside .card__link animates on hover */
+.card__link .card__link-arrow {
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.card__link:hover .card__link-arrow {
+  transform: translateX(4px);
+}
+
+/* Tag list inside card */
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+/* Terminal mode — cards get subtle border glow */
+[data-theme="terminal"] .card:hover {
+  border-color: var(--color-accent-dim);
+  box-shadow: 0 0 0 1px var(--color-accent-dim), var(--shadow-md);
+}
+
+
+/* ===================================================================
+   BADGES (.badge)
+   =================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  border-radius: var(--radius-full);
+  background-color: var(--color-elevated);
+  color: var(--color-text-secondary);
+}
+
+/* Available / success state */
+.badge--available {
+  background-color: var(--color-success-dim);
+  color: var(--color-success);
+}
+
+/* Accent state */
+.badge--accent {
+  background-color: var(--color-accent-dim);
+  color: var(--color-accent);
+}
+
+/* Pulsing dot inside badge */
+.badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Pulse keyframes — uses currentColor for theme-agnostic glow */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+    opacity: 1;
+  }
+  70% {
+    box-shadow: 0 0 0 8px transparent;
+    opacity: 0.5;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+    opacity: 1;
+  }
+}
+
+
+/* ===================================================================
+   TAGS (.tag)
+   =================================================================== */
+
+.tag {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  border-radius: var(--radius-md);
+  background-color: var(--color-elevated);
+  color: var(--color-text-muted);
+}
+
+/* Accent variant */
+.tag--accent {
+  background-color: var(--color-accent-dim);
+  color: var(--color-accent);
+}
+
+/* Petrole variant — for tech/domain tags */
+.tag--petrole {
+  background-color: var(--color-petrole-dim);
+  color: var(--color-petrole);
+}
+
+/* Convenience wrapper for tag lists */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+
+/* ===================================================================
+   FORMS
+   =================================================================== */
+
+.form-group {
+  margin-bottom: var(--space-5);
+}
+
+.form-label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px var(--color-accent-dim);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+/* Textarea */
+.form-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Select — custom chevron arrow */
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  padding-right: var(--space-10);
+  cursor: pointer;
+}
+
+/* Error state on individual input */
+.form-input--error {
+  border-color: var(--color-error);
+}
+
+/* Inline error message */
+.form-error {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-error);
+  margin-top: var(--space-1);
+}
+
+/* Success confirmation block */
+.form-success {
+  text-align: center;
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-success-dim);
+  border: 1px solid var(--color-success);
+  border-radius: var(--radius-md);
+  color: var(--color-success);
+  margin-bottom: var(--space-6);
+}
+
+.form-success svg {
+  display: block;
+  margin: 0 auto var(--space-4);
+  color: var(--color-success);
+}
+
+.form-success h3 {
+  font-size: var(--text-xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.form-success p {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+}
+
+/* Small helper note below form */
+.form-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: var(--space-4);
+}
+
+/* Terminal mode — green border on focus instead of gold */
+[data-theme="terminal"] .form-input:focus,
+[data-theme="terminal"] .form-textarea:focus,
+[data-theme="terminal"] .form-select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-dim);
+}
+
+
+/* ===================================================================
+   STATS (.stat)
+   =================================================================== */
+
+.stat {
+  text-align: center;
+}
+
+.stat__value {
+  font-family: var(--font-sans);
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-none);
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
+.stat__label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-normal);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted);
+}
+
+/* Reveal animation when counter is visible */
+.stat__value--revealed {
+  animation: stat-fade-in 0.6s var(--ease-out) forwards;
+}
+
+@keyframes stat-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===================================================================
+   TIMELINE (.timeline)
+   =================================================================== */
+
+.timeline {
+  position: relative;
+  padding-left: var(--space-8);
+}
+
+/* Vertical connector line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-border-subtle);
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: var(--space-8);
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+/* Dot marker on the connector line */
+.timeline__marker {
+  position: absolute;
+  left: calc(-1 * var(--space-8) - 5px);
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-bg);
+  box-shadow: 0 0 0 3px var(--color-accent-dim);
+}
+
+/* Monospaced date label */
+.timeline__date {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
+/* Item heading */
+.timeline__title {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+/* Sub-label or company name */
+.timeline__description {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+
+/* ===================================================================
+   GRIDS
+   =================================================================== */
+
+/* Stats: 2 columns on mobile, 4 on desktop */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Cards: 1 → 2 → 3 columns */
+.cards-grid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* ===================================================================
+   TYPING CURSOR
+   =================================================================== */
+
+.typing-cursor::after {
+  content: '|';
+  display: inline-block;
+  color: var(--color-accent);
+  margin-left: 2px;
+  font-weight: var(--weight-normal);
+  animation: blink-cursor 0.75s step-end infinite;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}

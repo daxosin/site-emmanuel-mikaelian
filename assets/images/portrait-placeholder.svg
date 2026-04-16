@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+
+    <clipPath id="circle-clip">
+      <circle cx="200" cy="200" r="180"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="180" fill="url(#bg-gradient)"/>
+
+  <!-- Person silhouette -->
+  <g clip-path="url(#circle-clip)">
+    <!-- Head -->
+    <circle cx="200" cy="150" r="60" fill="#cbd5e1"/>
+
+    <!-- Body/shoulders -->
+    <ellipse cx="200" cy="340" rx="100" ry="80" fill="#cbd5e1"/>
+  </g>
+
+  <!-- Border -->
+  <circle cx="200" cy="200" r="180" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Instruction text (hidden in production) -->
+  <!--
+    INSTRUCTIONS POUR LA PHOTO PROFESSIONNELLE:
+
+    1. Format: Portrait carré (1:1), minimum 800x800px
+    2. Fond: Neutre (blanc, gris clair, ou environnement professionnel)
+    3. Éclairage: Naturel ou studio, bien éclairé
+    4. Cadrage: Visage et épaules, regard vers l'objectif
+    5. Tenue: Professionnelle (blouse blanche pharmacien ou costume)
+    6. Expression: Sourire naturel, regard confiant
+
+    Exporter en:
+    - portrait.webp (qualité 85%, 800x800px)
+    - portrait@2x.webp (qualité 85%, 1600x1600px) pour Retina
+
+    Remplacer ce fichier placeholder par la vraie photo.
+  -->
+</svg>

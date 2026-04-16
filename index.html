@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="editorial">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emmanuel Mikaelian — Pharmacien DPO | Architecte de la Santé de Demain</title>
+  <meta name="description" content="Pharmacien DPO et PRAQ, j'aide les établissements de santé et startups pharma à libérer du temps soignant grâce à l'automatisation maîtrisée et la conformité intégrée.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Emmanuel Mikaelian — Architecte de la Santé de Demain">
+  <meta property="og:description" content="Pharmacien DPO spécialisé en conformité RGPD, PDA robotisée et transformation digitale santé.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emmanuel-mikaelian.fr/">
+  <meta property="og:image" content="https://emmanuel-mikaelian.fr/assets/images/og-image.svg">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Emmanuel Mikaelian — Architecte de la Santé de Demain">
+  <meta name="twitter:description" content="Pharmacien DPO spécialisé en conformité RGPD, PDA robotisée et transformation digitale santé.">
+  <meta name="twitter:image" content="https://emmanuel-mikaelian.fr/assets/images/og-image.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@400;500;600&family=Geist+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-theme="editorial">
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Terminal background layer (filled by JS in terminal mode) -->
+  <div id="terminal-bg" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header class="header" role="banner">
+    <div class="container header__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="header__logo" aria-label="Emmanuel Mikaelian — Accueil">
+        <span class="header__logo-mark" aria-hidden="true">EM</span>
+        <span class="header__logo-sep" aria-hidden="true">/</span>
+        <span class="header__logo-name">Emmanuel Mikaelian</span>
+      </a>
+
+      <!-- Navigation principale -->
+      <nav class="nav" id="nav-menu" role="navigation" aria-label="Navigation principale">
+        <a href="parcours.html" class="nav__link" data-i18n="nav.parcours">Parcours</a>
+        <a href="expertises.html" class="nav__link" data-i18n="nav.expertises">Expertises</a>
+        <a href="realisations.html" class="nav__link" data-i18n="nav.realisations">Réalisations</a>
+        <a href="blog.html" class="nav__link" data-i18n="nav.blog">Blog</a>
+        <a href="contact.html" class="nav__link nav__link--cta" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <!-- Contrôles header -->
+      <div class="header__controls">
+        <!-- Language Switch -->
+        <div class="lang-switch" role="group" aria-label="Changer de langue">
+          <button class="lang-switch__btn lang-switch__btn--active" data-lang="fr" type="button" aria-pressed="true">FR</button>
+          <button class="lang-switch__btn" data-lang="en" type="button" aria-pressed="false">EN</button>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Basculer vers le mode terminal"
+          aria-pressed="false"
+          type="button"
+        >
+          <span class="theme-toggle__editorial" aria-hidden="true">
+            <!-- Sun icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <span class="theme-toggle__label">Editorial</span>
+          </span>
+          <span class="theme-toggle__terminal" aria-hidden="true">
+            <!-- Moon / terminal icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 17 10 11 4 5"/>
+              <line x1="12" y1="19" x2="20" y2="19"/>
+            </svg>
+            <span class="theme-toggle__label">Terminal</span>
+          </span>
+        </button>
+
+        <!-- Hamburger mobile -->
+        <button
+          class="hamburger"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          type="button"
+        >
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN
+  ============================================================ -->
+  <main id="main-content">
+
+    <!-- ========================================================
+         HERO — Split layout
+    ======================================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__container">
+
+        <!-- Côté gauche : contenu textuel -->
+        <div class="hero__left" data-reveal>
+
+          <!-- Badge disponibilité -->
+          <div class="badge badge--available" style="margin-bottom: var(--space-6)">
+            <span class="badge__dot" aria-hidden="true"></span>
+            <span data-i18n="hero.badge">Disponible pour nouveaux projets</span>
+          </div>
+
+          <!-- Eyebrow -->
+          <p class="hero__eyebrow" data-i18n="hero.eyebrow">PHARMACIEN · DPO · TRANSFORMATION DIGITALE</p>
+
+          <!-- Titre principal -->
+          <h1 id="hero-title" class="hero__title">
+            <span data-i18n="hero.title.1">La complexité réglementaire,</span><br>
+            <em class="hero__title-em" data-i18n="hero.title.2">transformée en clarté.</em>
+          </h1>
+
+          <!-- Description -->
+          <p class="hero__description" data-i18n="hero.desc">
+            J'aide les établissements de santé et startups pharma à libérer du temps soignant
+            grâce à l'automatisation maîtrisée et la conformité intégrée.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero__actions">
+            <a href="contact.html" class="btn btn--primary btn--lg" data-i18n="hero.cta.1">
+              Discutons de votre projet
+            </a>
+            <a href="expertises.html" class="btn btn--ghost btn--lg" data-i18n="hero.cta.2">
+              Découvrir mon approche
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Côté droit : visuel adaptatif (editorial / terminal via CSS) -->
+        <div class="hero__right" aria-hidden="true">
+
+          <!-- Mode éditorial : citation avec lettrine décorative -->
+          <div class="hero__editorial-panel">
+            <blockquote class="hero__signature-quote">
+              <span class="hero__lettrine" aria-hidden="true">&#8220;</span>
+              <p>
+                La technique libère le temps,<br>
+                le temps permet la présence,<br>
+                la présence fait le soin.
+              </p>
+              <footer class="hero__quote-attribution">— Emmanuel Mikaelian</footer>
+            </blockquote>
+          </div>
+
+          <!-- Mode terminal : fenêtre profil.json (même HTML, CSS-only switch) -->
+          <div class="hero__terminal-panel">
+            <div class="terminal-window">
+              <div class="terminal-window__titlebar">
+                <span class="terminal-window__dot terminal-window__dot--red"></span>
+                <span class="terminal-window__dot terminal-window__dot--yellow"></span>
+                <span class="terminal-window__dot terminal-window__dot--green"></span>
+                <span class="terminal-window__filename">profil.json</span>
+              </div>
+              <div class="terminal-window__body">
+                <pre class="terminal-window__code"><code>{
+  <span class="tok-key">"nom"</span>: <span class="tok-str">"Emmanuel Mikaelian"</span>,
+  <span class="tok-key">"titre"</span>: <span class="tok-str">"Pharmacien · DPO · PRAQ"</span>,
+  <span class="tok-key">"statut"</span>: <span class="tok-str">"disponible"</span>,
+  <span class="tok-key">"expertise"</span>: [
+    <span class="tok-str">"Conformité &amp; RGPD"</span>,
+    <span class="tok-str">"PDA automatisée"</span>,
+    <span class="tok-str">"IA Santé"</span>
+  ],
+  <span class="tok-key">"ehpad"</span>: <span class="tok-num">9</span>,
+  <span class="tok-key">"surface_m2"</span>: <span class="tok-num">2500</span>,
+  <span class="tok-key">"certification"</span>: <span class="tok-str">"ISO 9001"</span>,
+  <span class="tok-key">"contact"</span>: <span class="tok-str">"emmanuel@h8pharma.fr"</span>
+}</code></pre>
+                <span class="terminal-window__cursor" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         STATS
+    ======================================================== -->
+    <section class="stats-section" aria-labelledby="stats-heading">
+      <div class="container">
+        <h2 id="stats-heading" class="sr-only">Chiffres clés</h2>
+        <div class="stats-grid">
+
+          <div class="stat" data-reveal data-reveal-delay="0">
+            <span class="stat__value">9</span>
+            <span class="stat__label" data-i18n="stat.ehpad">EHPAD accompagnés</span>
+          </div>
+
+          <a href="realisations.html" class="stat stat--link" data-reveal data-reveal-delay="100">
+            <span class="stat__value">2&nbsp;500&nbsp;m²</span>
+            <span class="stat__label" data-i18n="stat.pure">PURE — Pharma78</span>
+          </a>
+
+          <div class="stat" data-reveal data-reveal-delay="200">
+            <span class="stat__value">+7,7&nbsp;%</span>
+            <span class="stat__label" data-i18n="stat.croissance">Croissance 2025</span>
+          </div>
+
+          <div class="stat" data-reveal data-reveal-delay="300">
+            <span class="stat__value">ISO&nbsp;9001</span>
+            <span class="stat__label" data-i18n="stat.iso">En cours de certification</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         EXPERTISES
+    ======================================================== -->
+    <section id="expertises" class="section" aria-labelledby="expertises-title">
+      <div class="container">
+
+        <header class="section__header" data-reveal>
+          <p class="section__eyebrow" data-i18n="exp.eyebrow">Trois piliers</p>
+          <h2 id="expertises-title" class="section__title" data-i18n="exp.title">
+            Une expertise transversale au service du soin
+          </h2>
+          <p class="section__description" data-i18n="exp.desc">
+            Rigueur réglementaire, excellence opérationnelle et innovation technologique —
+            trois dimensions indissociables pour une transformation durable.
+          </p>
+        </header>
+
+        <div class="cards-grid">
+
+          <!-- Card 1 : Conformité & Qualité -->
+          <article class="card" data-reveal data-reveal-delay="0">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <h3 class="card__title" data-i18n="card.conformite">Conformité &amp; Qualité</h3>
+            <p class="card__text" data-i18n="card.conformite.t">
+              RGPD, DPO externalisé, ISO 9001, BPP, ANSM, pharmacovigilance.
+              Une conformité qui devient avantage compétitif, pas une contrainte.
+            </p>
+            <a href="expertises.html#conformite" class="card__link" aria-label="En savoir plus sur Conformité et Qualité">
+              En savoir plus
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Card 2 : PDA & Automatisation -->
+          <article class="card" data-reveal data-reveal-delay="100">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+                <path d="M7 9h.01M12 9h.01M17 9h.01"/>
+              </svg>
+            </div>
+            <h3 class="card__title" data-i18n="card.pda">PDA &amp; Automatisation</h3>
+            <p class="card__text" data-i18n="card.pda.t">
+              Pilotage automates PDA, intégration LGO/SSI, traçabilité end-to-end,
+              services EHPAD. L'automatisation au service du soin et de la sécurité.
+            </p>
+            <a href="expertises.html#pda" class="card__link" aria-label="En savoir plus sur PDA et Automatisation">
+              En savoir plus
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Card 3 : Tech & IA Santé -->
+          <article class="card" data-reveal data-reveal-delay="200">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+                <line x1="12" y1="2" x2="12" y2="22" opacity=".4"/>
+              </svg>
+            </div>
+            <h3 class="card__title" data-i18n="card.tech">Tech &amp; IA Santé</h3>
+            <p class="card__text" data-i18n="card.tech.t">
+              Workflows IA documentaires, développement outils internes,
+              architecture SI santé, prompt engineering. La tech qui libère du temps soignant.
+            </p>
+            <a href="expertises.html#tech" class="card__link" aria-label="En savoir plus sur Tech et IA Santé">
+              En savoir plus
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         CITATION
+    ======================================================== -->
+    <section class="quote-section" aria-labelledby="quote-heading">
+      <div class="container">
+        <h2 id="quote-heading" class="sr-only">Citation signature</h2>
+        <figure class="quote" data-reveal>
+          <blockquote class="quote__text">
+            <p>
+              «&nbsp;La technique libère le temps,<br>
+              le temps permet la présence,<br>
+              la présence fait le soin.&nbsp;»
+            </p>
+          </blockquote>
+          <figcaption class="quote__attribution">— Emmanuel Mikaelian</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PARCOURS TEASER
+    ======================================================== -->
+    <section class="section parcours-teaser" aria-labelledby="parcours-teaser-title">
+      <div class="container">
+        <div class="parcours-teaser__grid">
+
+          <div class="parcours-teaser__content" data-reveal>
+            <p class="section__eyebrow">Mon parcours</p>
+            <h2 id="parcours-teaser-title" class="section__title">
+              15+ ans d'expertise pharmaceutique
+            </h2>
+            <p class="section__description">
+              Du comptoir officinal à la direction qualité, en passant par l'automatisation PDA
+              et la protection des données : un parcours construit pour comprendre chaque maillon
+              de la chaîne de santé.
+            </p>
+
+            <div class="parcours-teaser__highlights">
+
+              <div class="parcours-teaser__highlight" data-reveal data-reveal-delay="0">
+                <span class="parcours-teaser__year">2025</span>
+                <span class="parcours-teaser__role">Directeur Qualité PRAQ — H8 Pharma</span>
+              </div>
+
+              <div class="parcours-teaser__highlight" data-reveal data-reveal-delay="100">
+                <span class="parcours-teaser__year">2022</span>
+                <span class="parcours-teaser__role">DPO Certifié — Conformité RGPD</span>
+              </div>
+
+              <div class="parcours-teaser__highlight" data-reveal data-reveal-delay="200">
+                <span class="parcours-teaser__year">2018</span>
+                <span class="parcours-teaser__role">Lancement PDA automatisée — 9 EHPAD</span>
+              </div>
+
+            </div>
+
+            <a href="parcours.html" class="btn btn--secondary">
+              Voir le parcours complet
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="parcours-teaser__visual" aria-hidden="true">
+            <div class="parcours-teaser__timeline-line"></div>
+            <div class="parcours-teaser__node parcours-teaser__node--1">
+              <span class="parcours-teaser__node-year">2025</span>
+            </div>
+            <div class="parcours-teaser__node parcours-teaser__node--2">
+              <span class="parcours-teaser__node-year">2022</span>
+            </div>
+            <div class="parcours-teaser__node parcours-teaser__node--3">
+              <span class="parcours-teaser__node-year">2018</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         BLOG PREVIEW
+    ======================================================== -->
+    <section class="section blog-preview" aria-labelledby="blog-preview-title">
+      <div class="container">
+
+        <header class="section__header" data-reveal>
+          <p class="section__eyebrow">Réflexions</p>
+          <h2 id="blog-preview-title" class="section__title">Derniers articles</h2>
+          <p class="section__description">
+            Analyses, retours d'expérience et prospectives sur la santé de demain.
+          </p>
+        </header>
+
+        <div class="blog-preview__grid">
+
+          <a href="blog/ia-pharmacien-liberer-temps.html" class="blog-card" data-reveal data-reveal-delay="0">
+            <div class="blog-card__meta">
+              <span class="tag tag--accent">Tech &amp; IA Santé</span>
+            </div>
+            <h3 class="blog-card__title">
+              L'IA au service du pharmacien : libérer du temps pour l'essentiel
+            </h3>
+            <p class="blog-card__excerpt">
+              Comment l'intelligence artificielle transforme le quotidien du pharmacien
+              d'officine et libère du temps pour le conseil à valeur ajoutée.
+            </p>
+            <span class="blog-card__link" aria-hidden="true">
+              Lire l'article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </a>
+
+          <a href="blog/pda-robotisee-retour-experience.html" class="blog-card" data-reveal data-reveal-delay="100">
+            <div class="blog-card__meta">
+              <span class="tag">PDA &amp; Automatisation</span>
+            </div>
+            <h3 class="blog-card__title">
+              PDA robotisée : retour d'expérience après deux ans
+            </h3>
+            <p class="blog-card__excerpt">
+              Retour d'expérience concret sur la mise en place d'une PDA robotisée
+              pour 9 EHPAD — bénéfices, obstacles et enseignements.
+            </p>
+            <span class="blog-card__link" aria-hidden="true">
+              Lire l'article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </a>
+
+          <a href="blog/rgpd-pharmacie-5-erreurs.html" class="blog-card" data-reveal data-reveal-delay="200">
+            <div class="blog-card__meta">
+              <span class="tag">Conformité &amp; Qualité</span>
+            </div>
+            <h3 class="blog-card__title">
+              RGPD en pharmacie : les 5 erreurs à éviter absolument
+            </h3>
+            <p class="blog-card__excerpt">
+              Les erreurs RGPD les plus courantes en officine et établissements de santé,
+              et comment les corriger avant un contrôle CNIL.
+            </p>
+            <span class="blog-card__link" aria-hidden="true">
+              Lire l'article
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </a>
+
+        </div>
+
+        <div class="blog-preview__footer" data-reveal>
+          <a href="blog.html" class="btn btn--secondary">
+            Voir tous les articles
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         CTA FINAL
+    ======================================================== -->
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-box" data-reveal>
+          <h2 id="cta-title" class="cta-box__title" data-i18n="cta.title">Un projet ? Une question ?</h2>
+          <p class="cta-box__text" data-i18n="cta.text">
+            Discutons de la façon dont je peux vous aider à transformer vos défis
+            réglementaires en opportunités opérationnelles.
+          </p>
+          <a href="contact.html" class="btn btn--primary btn--lg" data-i18n="cta.btn">
+            Prendre contact
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="footer__logo">
+            <span class="footer__logo-mark">EM</span>
+            <span class="footer__logo-sep">/</span>
+            Emmanuel Mikaelian
+          </span>
+          <p class="footer__tagline" data-i18n="footer.tagline">Pharmacien DPO · Architecte de la Santé de Demain</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Navigation pied de page">
+          <a href="parcours.html" class="footer__nav-link">Parcours</a>
+          <a href="expertises.html" class="footer__nav-link">Expertises</a>
+          <a href="realisations.html" class="footer__nav-link">Réalisations</a>
+          <a href="blog.html" class="footer__nav-link">Blog</a>
+          <a href="contact.html" class="footer__nav-link">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          <span data-i18n="footer.copy">&copy; 2026 Emmanuel Mikaelian. Tous droits réservés.</span>
+        </p>
+        <div class="footer__social">
+          <a
+            href="https://linkedin.com/in/emmanuel-mikaelian"
+            class="footer__social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Profil LinkedIn d'Emmanuel Mikaelian"
+          >LinkedIn</a>
+          <a
+            href="mailto:emmanuel@h8pharma.fr"
+            class="footer__social-link"
+            aria-label="Envoyer un email à Emmanuel Mikaelian"
+          >Email</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
